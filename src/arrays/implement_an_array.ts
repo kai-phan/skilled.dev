@@ -2,7 +2,7 @@ interface HashTable<T> {
   [key: string]: T;
 }
 
-class DynamicArray<T> {
+export class DynamicArray<T> {
   data: HashTable<T>;
   length: number;
 
@@ -49,12 +49,38 @@ class DynamicArray<T> {
     const removeItem = this.data[index]
 
     for (let i = index; i < this.length - 1; i++) {
-      console.log(this.data[i +1])
       this.data[i] = this.data[i + 1]
     }
 
     delete this.data[this.length-1];
     this.length--;
     return removeItem;
+  }
+
+  shift() {
+    if (this.length === 0) return undefined;
+
+    const shiftItem = this.data[0];
+
+    for (let i = 0; i < this.length - 1; i++) {
+      this.data[i] = this.data[i + 1]
+    }
+
+    delete this.data[this.length - 1];
+    this.length--;
+
+    return shiftItem;
+  }
+
+  unshift(item: T) {
+    this.length++;
+
+    for(let i = this.length - 1; i > 0; i--) {
+      this.data[i] = this.data[i - 1];
+    }
+
+    this.data[0] = item;
+
+    return this.data;
   }
 }
