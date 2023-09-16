@@ -8,7 +8,7 @@ export class DynamicArray<T> {
 
   constructor() {
     this.length = 0;
-    this.data = {}
+    this.data = {};
   }
 
   get(index: number) {
@@ -23,7 +23,7 @@ export class DynamicArray<T> {
   pop() {
     if (this.length === 0) return undefined;
 
-    const popItem = this.data[this.length - 1]
+    const popItem = this.data[this.length - 1];
     delete this.data[this.length - 1];
     this.length--;
 
@@ -36,7 +36,7 @@ export class DynamicArray<T> {
     this.length++;
 
     for (let i = this.length - 1; i > index; i--) {
-      this.data[i] = this.data[i - 1]
+      this.data[i] = this.data[i - 1];
     }
 
     this.data[index] = item;
@@ -44,15 +44,16 @@ export class DynamicArray<T> {
   }
 
   remove(index: number) {
-    if (this.length === 0 || index < 0 || index > this.length - 1) return undefined;
+    if (this.length === 0 || index < 0 || index > this.length - 1)
+      return undefined;
 
-    const removeItem = this.data[index]
+    const removeItem = this.data[index];
 
     for (let i = index; i < this.length - 1; i++) {
-      this.data[i] = this.data[i + 1]
+      this.data[i] = this.data[i + 1];
     }
 
-    delete this.data[this.length-1];
+    delete this.data[this.length - 1];
     this.length--;
     return removeItem;
   }
@@ -63,7 +64,7 @@ export class DynamicArray<T> {
     const shiftItem = this.data[0];
 
     for (let i = 0; i < this.length - 1; i++) {
-      this.data[i] = this.data[i + 1]
+      this.data[i] = this.data[i + 1];
     }
 
     delete this.data[this.length - 1];
@@ -75,7 +76,7 @@ export class DynamicArray<T> {
   unshift(item: T) {
     this.length++;
 
-    for(let i = this.length - 1; i > 0; i--) {
+    for (let i = this.length - 1; i > 0; i--) {
       this.data[i] = this.data[i - 1];
     }
 
