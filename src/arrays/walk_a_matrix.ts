@@ -1,9 +1,5 @@
 // Input
-const matrix = [
-  [1],
-  [2],
-  [3]
-];
+const matrix = [[1], [2], [3]];
 
 export function walkMatrix(matrix: number[][]) {
   let result: number[] = [];
@@ -13,7 +9,7 @@ export function walkMatrix(matrix: number[][]) {
 
   let startRow = 0;
   let startCol = 0;
-  let endRow =  rowCount - 1;
+  let endRow = rowCount - 1;
   let endCol = colCount - 1;
 
   while (endRow >= startRow && endCol >= startCol) {
@@ -45,7 +41,7 @@ export function walkMatrix(matrix: number[][]) {
     }
     endRow--;
 
-    if (endCol >=  startCol) {
+    if (endCol >= startCol) {
       // walk bottom to top (first row), after this we can increment startCol
       for (let row = endRow; row >= startRow; row--) {
         const nodeInFirstCol = matrix[row][startCol];
@@ -54,8 +50,7 @@ export function walkMatrix(matrix: number[][]) {
       }
     }
 
-    startCol++
-
+    startCol++;
   }
 
   return result;

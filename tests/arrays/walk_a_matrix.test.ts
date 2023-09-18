@@ -17,11 +17,7 @@ const tests = [
     description: '1 x c matrix',
   },
   {
-    input: [
-      [1],
-      [2],
-      [3]
-    ],
+    input: [[1], [2], [3]],
     expected: [1, 2, 3],
     description: 'r x 1 matrix',
   },

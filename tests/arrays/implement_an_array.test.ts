@@ -23,7 +23,12 @@ describe('Implement an array', () => {
   });
 
   test('insert', () => {
-    expect(dynamicArray.insert(1, 3)).toStrictEqual({ '0': 0, '1': 3, '2': 1, '3': 2 });
+    expect(dynamicArray.insert(1, 3)).toStrictEqual({
+      '0': 0,
+      '1': 3,
+      '2': 1,
+      '3': 2,
+    });
     expect(dynamicArray.length).toBe(4);
   });
 
@@ -44,8 +49,12 @@ describe('Implement an array', () => {
   });
 
   test('unshift', () => {
-    expect(dynamicArray.unshift(3)).toStrictEqual({ '0': 3, '1': 0, '2': 1, '3': 2 });
+    expect(dynamicArray.unshift(3)).toStrictEqual({
+      '0': 3,
+      '1': 0,
+      '2': 1,
+      '3': 2,
+    });
     expect(dynamicArray.length).toBe(4);
   });
-
 });
